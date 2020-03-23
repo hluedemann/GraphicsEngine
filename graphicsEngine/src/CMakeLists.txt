@@ -4,6 +4,11 @@ cmake_minimum_required(VERSION 3.16)
 find_package(CMakeshift 3.7 REQUIRED)
 find_package(gsl-lite 0.36.0 REQUIRED)
 
+find_package(glfw3 REQUIRED)
+find_package(glad REQUIRED)
+find_package(glm REQUIRED)
+find_package(imgui REQUIRED)
+find_package(spdlog REQUIRED)
 
 add_library(graphicsEngine STATIC
     core/application.cpp)
@@ -28,5 +33,13 @@ include(CMakeshift/TargetCompileSettings)
 
 # library dependencies
 target_link_libraries(graphicsEngine
+    PRIVATE
+        glfw
+        glad::glad
+        glm
+        spdlog::spdlog
+        spdlog::spdlog_header_only
     PUBLIC
-        gsl::gsl-lite-v1)
+        gsl::gsl-lite-v1
+        imgui::imgui
+        )
