@@ -16,8 +16,17 @@ void Application::run()
     running_ = true;
     while (running_)
     {
-        continue;
+        for (auto layer : layerStack_)
+            layer->onEvent();
+        for (auto layer : layerStack_)
+            layer->onUpdate();
+
     }
+}
+
+void Application::pushLayer(Layer *_layer)
+{
+    layerStack_.pushLayer(_layer);
 }
 
 }

@@ -1,5 +1,8 @@
 #include <engine/engine.h>
 
+
+#include <memory>
+
 class Sandbox : public engine::Application
 {
 public:
@@ -9,6 +12,11 @@ public:
 
 engine::Application* engine::createApplication()
 {
-    return new Sandbox();
+
+    auto app = new Sandbox();
+
+    app->pushLayer(new engine::Layer());
+
+    return app;
 }
 

@@ -11,7 +11,9 @@ find_package(imgui REQUIRED)
 find_package(spdlog REQUIRED)
 
 add_library(graphicsEngine STATIC
-    core/application.cpp)
+    core/application.cpp
+    core/layer.cpp
+    core/layerstack.cpp)
 
 # properties
 target_compile_features(graphicsEngine

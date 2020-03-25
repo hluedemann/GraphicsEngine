@@ -2,6 +2,8 @@
 #define APPLICATION_H
 
 
+#include "layer.h"
+#include "layerstack.h"
 
 namespace engine {
 
@@ -13,12 +15,16 @@ public:
 
     void run();
 
+    void pushLayer(Layer *_layer);
+
     inline static Application& getApplication() { return *instance_; }
 
 private:
 
     bool running_;
     static Application *instance_;
+
+    LayerStack layerStack_;
 
 };
 
