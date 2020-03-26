@@ -4,6 +4,9 @@
 
 #include "layer.h"
 #include "layerstack.h"
+#include "window.h"
+
+#include <memory>
 
 namespace engine {
 
@@ -20,6 +23,8 @@ public:
     inline static Application& getApplication() { return *instance_; }
 
 private:
+
+    std::unique_ptr<Window> window_;
 
     bool running_;
     static Application *instance_;

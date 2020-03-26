@@ -9,18 +9,21 @@ Application* Application::instance_ = nullptr;
 Application::Application()
 {
     instance_ = this;
+
+    window_.reset(new Window({"Test Window", 1280, 720}));
 }
 
 void Application::run()
 {
     running_ = true;
-    while (running_)
+    while (!window_->isClosed())
     {
         for (auto layer : layerStack_)
             layer->onEvent();
         for (auto layer : layerStack_)
             layer->onUpdate();
 
+        window_->update();
     }
 }
 

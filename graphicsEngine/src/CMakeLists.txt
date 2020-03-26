@@ -13,7 +13,8 @@ find_package(spdlog REQUIRED)
 add_library(graphicsEngine STATIC
     core/application.cpp
     core/layer.cpp
-    core/layerstack.cpp)
+    core/layerstack.cpp
+    core/window.cpp)
 
 # properties
 target_compile_features(graphicsEngine
