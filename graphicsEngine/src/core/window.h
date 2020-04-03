@@ -6,6 +6,9 @@
 #include <GLFW/glfw3.h>
 
 #include <memory>
+#include <functional>
+
+#include "../events/event.h"
 
 namespace engine {
 
@@ -27,6 +30,9 @@ struct WindowProps
 class Window
 {
 public:
+
+    using EventCallbackFunc = std::function<void(Event&)>;
+
     Window(WindowProps _windowProps);
     ~Window();
 
@@ -36,6 +42,11 @@ public:
     int getWidth() { return windowData_.width; }
     int getHeight() { return windowData_.height; }
     std::string getTitle() { return windowData_.title; }
+
+    void setEventCallbackFunc(EventCallbackFunc _eventCallbackFunc)
+    {
+        windowData_.eventCallback = _eventCallbackFunc;
+    }
 
     bool isClosed() { return isClosed_; }
 
@@ -52,6 +63,8 @@ private:
     {
         std::string title;
         int width, height;
+
+        EventCallbackFunc eventCallback;
     };
 
     WindowData windowData_;

@@ -5,6 +5,9 @@
 #include "layer.h"
 #include "layerstack.h"
 #include "window.h"
+#include "../events/event.h"
+#include "../events/applicationEvent.h"
+
 
 #include <memory>
 
@@ -24,9 +27,13 @@ public:
 
 private:
 
+    void onWindowClose(WindowCloseEvent &_event);
+
+    void onEvent(Event &_event);
+
     std::unique_ptr<Window> window_;
 
-    bool running_;
+    bool running_ = true;
     static Application *instance_;
 
     LayerStack layerStack_;

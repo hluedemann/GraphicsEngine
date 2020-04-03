@@ -4,6 +4,8 @@
 
 #include <string>
 
+#include "../events/event.h"
+
 namespace engine {
 
 class Layer
@@ -15,7 +17,7 @@ public:
     virtual void onAttach() { }
     virtual void onDetach() { }
     virtual void onUpdate() { }
-    virtual void onEvent() { }
+    virtual void onEvent(Event &_event) { }
 
     inline const std::string getName() { return debugName_; }
 
