@@ -15,7 +15,8 @@ add_library(graphicsEngine STATIC
     core/layer.cpp
     core/layerstack.cpp
     core/window.cpp
-    core/input.cpp)
+    core/input.cpp
+    core/log.cpp)
 
 # properties
 target_compile_features(graphicsEngine

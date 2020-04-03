@@ -12,16 +12,16 @@ public:
 
     virtual void onAttach() override
     {
-        std::cout << "Attached" << std::endl;
+        E_INFO("Attached layer!");
     }
     virtual void onDetach() override
     {
-        std::cout << "Detached" << std::endl;
+        E_INFO("Detached layer!");
     }
     virtual void onUpdate() override
     {
         auto [x, y] = engine::getMousePosition();
-        std::cout << "(" << x << ", " << y << ")" << std::endl;
+        E_INFO("Mouse position: ({0}, {1})", x, y);
     }
     virtual void onEvent(engine::Event &_event) override
     {

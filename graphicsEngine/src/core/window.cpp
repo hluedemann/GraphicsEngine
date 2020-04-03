@@ -3,6 +3,7 @@
 #include "../events/mouseEvent.h"
 #include "../events/keyEvent.h"
 #include "../events/applicationEvent.h"
+#include "log.h"
 
 #include <iostream>
 
@@ -28,7 +29,7 @@ void Window::init()
 {
     if (!glfwInit())
     {
-        std::cerr << "init glfw failed!" << std::endl;
+        E_CORE_ERROR("Failed to initialize glfw!");
         return;
     }
 
@@ -38,10 +39,12 @@ void Window::init()
 
     if (!window_)
     {
-        std::cerr << "Failed to create window." << std::endl;
+        E_CORE_ERROR("Failed to create glfw window!");
         glfwTerminate();
         return;
     }
+
+    E_CORE_INFO("Crerated glfw window!");
 
     glfwSetWindowUserPointer(window_, &windowData_);
 
