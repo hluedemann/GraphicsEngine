@@ -25,6 +25,8 @@ public:
 
     inline static Application& getApplication() { return *instance_; }
 
+    inline Window& getWindow() { return *window_; }
+
 private:
 
     void onWindowClose(WindowCloseEvent &_event);

@@ -43,6 +43,8 @@ public:
     int getHeight() { return windowData_.height; }
     std::string getTitle() { return windowData_.title; }
 
+    GLFWwindow* getNativeWindow() { return window_; }
+
     void setEventCallbackFunc(EventCallbackFunc _eventCallbackFunc)
     {
         windowData_.eventCallback = _eventCallbackFunc;

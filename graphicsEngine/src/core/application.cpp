@@ -47,8 +47,6 @@ void Application::onEvent(Event &_event)
     for (auto it = layerStack_.end(); it != layerStack_.begin();)
     {
         (*--it)->onEvent(_event);
-
-        std::cout << _event.getName() << std::endl;
     }
 }
 
