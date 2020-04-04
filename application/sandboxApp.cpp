@@ -8,11 +8,14 @@
 class ExampleLayer : public engine::Layer
 {
 public:
-    ExampleLayer() = default;
+    ExampleLayer()
+        : renderer{ engine::Renderer()} {};
 
     virtual void onAttach() override
     {
         E_INFO("Attached layer!");
+
+        renderer.init();
     }
     virtual void onDetach() override
     {
@@ -22,11 +25,19 @@ public:
     {
         auto [x, y] = engine::getMousePosition();
         E_INFO("Mouse position: ({0}, {1})", x, y);
+
+        renderer.draw();
+
     }
     virtual void onEvent(engine::Event &_event) override
     {
         auto name = _event.getName();
     }
+
+
+    engine::Renderer renderer;
+
+
 };
 
 

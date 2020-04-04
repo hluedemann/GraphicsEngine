@@ -148,7 +148,6 @@ void Window::shutdown()
 
 void Window::update()
 {
-    glClear(GL_COLOR_BUFFER_BIT); // Move this to renderer
     glfwSwapBuffers(window_);
     glfwPollEvents();
     isClosed_ = glfwWindowShouldClose(window_);
