@@ -11,7 +11,6 @@ namespace engine {
 
 
 Window::Window(WindowProps _windowProps)
-    : isClosed_(false)
 {
     windowData_.title = _windowProps.title;
     windowData_.width = _windowProps.width;
@@ -35,8 +34,6 @@ void Window::init()
 
     window_ = glfwCreateWindow(windowData_.width, windowData_.height, windowData_.title.c_str(), nullptr, nullptr);
 
-    glfwMakeContextCurrent(window_);
-
     if (!window_)
     {
         E_CORE_ERROR("Failed to create glfw window!");
@@ -46,12 +43,11 @@ void Window::init()
 
     E_CORE_INFO("Crerated glfw window!");
 
+    graphicsContext_ = std::make_shared<GraphicsContext>(GraphicsContext(window_));
+    graphicsContext_->init();
+
     glfwSetWindowUserPointer(window_, &windowData_);
 
-    // Should be moved maybe?
-    gladLoadGL();
-
-    glClearColor(0.5f, 0.2f, 0.1f, 1.0f);
 
     // Set up glfw call back functions
 
@@ -148,9 +144,8 @@ void Window::shutdown()
 
 void Window::update()
 {
-    glfwSwapBuffers(window_);
     glfwPollEvents();
-    isClosed_ = glfwWindowShouldClose(window_);
+    graphicsContext_->swpaBuffers();
 }
 
 }

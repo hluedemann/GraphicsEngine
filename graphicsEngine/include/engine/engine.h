@@ -7,3 +7,6 @@
 #include "../../src/core/log.h"
 
 #include "../../src/renderer/renderer.h"
+#include "../../src/renderer/rendercommand.h"
+#include "../../src/renderer/vertexarray.h"
+#include "../../src/renderer/shader.h"

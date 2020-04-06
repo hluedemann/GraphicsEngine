@@ -9,6 +9,7 @@
 #include <functional>
 
 #include "../events/event.h"
+#include "../renderer/graphicscontext.h"
 
 namespace engine {
 
@@ -50,14 +51,10 @@ public:
         windowData_.eventCallback = _eventCallbackFunc;
     }
 
-    bool isClosed() { return isClosed_; }
-
 private:
 
     void init();
     void shutdown();
-
-    bool isClosed_;
 
     GLFWwindow *window_;
 
@@ -70,6 +67,8 @@ private:
     };
 
     WindowData windowData_;
+    std::shared_ptr<GraphicsContext> graphicsContext_;
+
 };
 
 }

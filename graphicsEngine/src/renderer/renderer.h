@@ -3,6 +3,12 @@
 
 #include <glad/glad.h>
 #include <array>
+#include <memory>
+
+#include "vertexbuffer.h"
+#include "vertexarray.h"
+#include "indexbuffer.h"
+#include "shader.h"
 
 namespace engine {
 
@@ -12,14 +18,7 @@ class Renderer
 public:
     Renderer();
 
-    void init();
-
-    void draw();
-
-private:
-    std::array<float, 9> vertices = { -0.5f, -0.5f, 0.0f,
-                                       0.5f, -0.5f, 0.0f,
-                                       0.0f,  0.5f, 0.0f };
+    static void submit(std::shared_ptr<Shader> const& _shader, std::shared_ptr<VertexArray> const& _vertexArray);
 };
 
 }

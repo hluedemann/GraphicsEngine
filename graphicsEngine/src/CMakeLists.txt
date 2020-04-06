@@ -17,7 +17,13 @@ add_library(graphicsEngine STATIC
     core/window.cpp
     core/input.cpp
     core/log.cpp
-    renderer/renderer.cpp)
+    renderer/renderer.cpp
+    renderer/rendercommand.cpp
+    renderer/graphicscontext.cpp
+    renderer/vertexbuffer.cpp
+    renderer/indexbuffer.cpp
+    renderer/vertexarray.cpp
+    renderer/shader.cpp)
 
 # properties
 target_compile_features(graphicsEngine
