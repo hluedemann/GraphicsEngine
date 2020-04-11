@@ -3,10 +3,11 @@
 
 
 #include <glad/glad.h>
+#include <glm/gtc/type_ptr.hpp>
 
 namespace engine {
 
-Shader::Shader(const std::string &vertexSource, const std::string &fragmentSource)
+Shader::Shader(std::string const& vertexSource, std::string const& fragmentSource)
 {
     GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
 
@@ -114,6 +115,12 @@ void Shader::bind() const
 void Shader::unbind() const
 {
     glUseProgram(0);
+}
+
+void Shader::uploadUniformMat4(std::string const& _name, glm::mat4 const& _matrix)
+{
+    GLint location = glGetUniformLocation(programmID_, _name.c_str());
+    glUniformMatrix4fv(location, 1, GL_FALSE, glm::value_ptr(_matrix));
 }
 
 

@@ -10,3 +10,5 @@
 #include "../../src/renderer/rendercommand.h"
 #include "../../src/renderer/vertexarray.h"
 #include "../../src/renderer/shader.h"
+
+#include "../../src/camera/orthographiccamera.h"

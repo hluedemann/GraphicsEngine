@@ -23,7 +23,8 @@ add_library(graphicsEngine STATIC
     renderer/vertexbuffer.cpp
     renderer/indexbuffer.cpp
     renderer/vertexarray.cpp
-    renderer/shader.cpp)
+    renderer/shader.cpp
+    camera/orthographiccamera.cpp)
 
 # properties
 target_compile_features(graphicsEngine
