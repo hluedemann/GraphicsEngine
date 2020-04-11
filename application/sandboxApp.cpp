@@ -64,7 +64,7 @@ public:
     }
 
 
-    virtual void onUpdate() override
+    virtual void onUpdate(engine::TimeStep _dt) override
     {
         engine::RenderCommand::setClearColor({0.5f, 0.4f, 0.2f, 1.0f});
         engine::RenderCommand::clear();
@@ -72,6 +72,8 @@ public:
         engine::Renderer::beginScene(camera_);
         engine::Renderer::submit(shader_, vertexArray_, glm::translate(glm::mat4(1.0f),{0.0f, 0.0f, 0.0f}));
         engine::Renderer::endScene();
+
+        E_INFO(_dt.getSeconds());
     }
 
 

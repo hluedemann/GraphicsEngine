@@ -19,10 +19,17 @@ Application::Application()
 
 void Application::run()
 {
+    float lastFrameTime = 0.0f;
+
     while (running_)
     {
+        float time = static_cast<float>(glfwGetTime());
+
+        TimeStep dt = time - lastFrameTime;
+        lastFrameTime = time;
+
         for (auto layer : layerStack_)
-            layer->onUpdate();
+            layer->onUpdate(dt);
 
         window_->update();
     }

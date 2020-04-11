@@ -5,6 +5,7 @@
 #include "../../src/core/layerstack.h"
 #include "../../src/core/input.h"
 #include "../../src/core/log.h"
+#include "../../src/core/timestep.h"
 
 #include "../../src/renderer/renderer.h"
 #include "../../src/renderer/rendercommand.h"

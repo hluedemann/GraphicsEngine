@@ -24,7 +24,9 @@ add_library(graphicsEngine STATIC
     renderer/indexbuffer.cpp
     renderer/vertexarray.cpp
     renderer/shader.cpp
-    camera/orthographiccamera.cpp)
+    camera/orthographiccamera.cpp
+    core/timestep.cpp
+    )
 
 # properties
 target_compile_features(graphicsEngine

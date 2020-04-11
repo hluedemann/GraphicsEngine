@@ -5,6 +5,7 @@
 #include <string>
 
 #include "../events/event.h"
+#include "timestep.h"
 
 namespace engine {
 
@@ -16,7 +17,7 @@ public:
 
     virtual void onAttach() { }
     virtual void onDetach() { }
-    virtual void onUpdate() { }
+    virtual void onUpdate(TimeStep _dt) { }
     virtual void onEvent(Event &_event) { }
 
     inline const std::string getName() { return debugName_; }
