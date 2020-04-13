@@ -55,6 +55,7 @@ public:
 
         camera_.setPosition({0.5f, 0.0f, 0.0f});
         camera_.setRotation(45.0f);
+        camera_.setZoom(3.0f);
     }
 
 
