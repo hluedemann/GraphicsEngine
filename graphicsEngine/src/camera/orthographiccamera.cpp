@@ -36,6 +36,11 @@ void OrthographicCamera::setRotation(float _rotation)
     recalculateViewMatrix();
 }
 
+void OrthographicCamera::moveByOffset(const glm::vec3 &_offset)
+{
+    setPosition(position_ + _offset);
+}
+
 void OrthographicCamera::recalculateViewMatrix()
 {
     viewMatrix_ = glm::rotate(glm::mat4(1.0f), glm::radians(-rotation_), glm::vec3(0.0f, 0.0f, 1.0f)) *

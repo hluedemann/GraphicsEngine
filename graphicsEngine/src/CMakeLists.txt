@@ -26,6 +26,7 @@ add_library(graphicsEngine STATIC
     renderer/shader.cpp
     camera/orthographiccamera.cpp
     core/timestep.cpp
+    camera/cameracontroller.cpp
     )
 
 # properties

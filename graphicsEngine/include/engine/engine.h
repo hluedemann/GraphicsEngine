@@ -6,6 +6,8 @@
 #include "../../src/core/input.h"
 #include "../../src/core/log.h"
 #include "../../src/core/timestep.h"
+#include "../../src/core/keycodes.h"
+#include "../../src/core/mousecodes.h"
 
 #include "../../src/renderer/renderer.h"
 #include "../../src/renderer/rendercommand.h"
@@ -13,3 +15,4 @@
 #include "../../src/renderer/shader.h"
 
 #include "../../src/camera/orthographiccamera.h"
+#include "../../src/camera/cameracontroller.h"

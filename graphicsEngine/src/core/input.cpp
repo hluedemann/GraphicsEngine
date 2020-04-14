@@ -3,20 +3,20 @@
 
 namespace engine {
 
-bool isKeyPressed(int _key)
+bool isKeyPressed(KeyCode _key)
 {
     GLFWwindow* window = Application::getApplication().getWindow().getNativeWindow();
 
-    auto state = glfwGetKey(window, _key);
+    auto state = glfwGetKey(window, static_cast<int>(_key));
 
     return state == GLFW_PRESS;
 }
 
-bool isMouseButtonPressed(int _button)
+bool isMouseButtonPressed(MouseButton _button)
 {
     GLFWwindow* window = Application::getApplication().getWindow().getNativeWindow();
 
-    auto state = glfwGetMouseButton(window, _button);
+    auto state = glfwGetMouseButton(window, static_cast<int>(_button));
 
     return state == GLFW_PRESS;
 }

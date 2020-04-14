@@ -3,10 +3,13 @@
 
 #include <tuple>
 
+#include "keycodes.h"
+#include "mousecodes.h"
+
 namespace engine {
 
-bool isKeyPressed(int _key);
-bool isMouseButtonPressed(int _button);
+bool isKeyPressed(KeyCode _key);
+bool isMouseButtonPressed(MouseButton _button);
 std::pair<double, double> getMousePosition();
 
 }

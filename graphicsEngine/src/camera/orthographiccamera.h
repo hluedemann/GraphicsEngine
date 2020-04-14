@@ -16,6 +16,8 @@ public:
     void setZoom(float _zoom);
     void setRotation(float _rotation);
 
+    void moveByOffset(glm::vec3 const& _offset);
+
     glm::vec3 getPosition() const { return position_; }
     float getZoom() const { return zoom_; }
     float getRotation() const { return rotation_; }
